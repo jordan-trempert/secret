@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>90s Retro Website</title>
+    <style>
+      /* Inline CSS for simplicity */
+      body {
+        background-color: #000;
+        color: #fff;
+        font-family: "Arial", sans-serif;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+      }
+
+      body {
+        background-image: url(/images/bg.png);
+        background-repeat: round repeat;
+      }
+      .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+      .retro-header {
+        font-family: "Impact", sans-serif;
+        font-size: 4em;
+        letter-spacing: 5px;
+        text-transform: uppercase;
+        /* Rainbow gradient animation */
+        background: linear-gradient(
+          to right,
+          #ff0000,
+          #ff8000,
+          #ffff00,
+          #00ff00,
+          #0000ff,
+          #8000ff,
+          #ff00ff
+        );
+        background-size: 400% 100%;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        /* Text shadow */
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+        /* Rotation */
+        transform: rotate(-5deg);
+        margin-bottom: 20px;
+        /* Animation */
+        animation: rainbow-text 10s linear infinite alternate;
+      }
+
+      @keyframes rainbow-text {
+        0% {
+          background-position: 0% 50%;
+        }
+        100% {
+          background-position: 100% 50%;
+        }
+      }
+      p {
+        font-size: 1.2em;
+        line-height: 1.6;
+        margin-bottom: 20px;
+      }
+      .button {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #ffcc00;
+        color: #000;
+        text-decoration: none;
+        border-radius: 5px;
+        text-transform: uppercase;
+        font-weight: bold;
+        letter-spacing: 1px;
+        transition: background-color 0.3s ease;
+      }
+      .button:hover {
+        background-color: #ffd633;
+      }
+      .image-container {
+        margin-top: 40px;
+      }
+      .image-container img {
+        max-width: 100%;
+        height: auto;
+      }
+
+      .container {
+        border-radius: 20px;
+        background-color: rgba(0, 0, 0, 0.8);
+      }
+
+      .retro-text {
+        font-family: "Impact", sans-serif;
+        font-size: 2em;
+        letter-spacing: 5px;
+        text-transform: uppercase;
+        /* Rainbow gradient animation */
+        background: linear-gradient(
+          to right,
+          #ff0000,
+          #ff8000,
+          #ffff00,
+          #00ff00,
+          #0000ff,
+          #8000ff,
+          #ff00ff
+        );
+        background-size: 400% 100%;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        /* Text shadow */
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+        /* Rotation */
+        transform: rotate(0deg);
+        margin-bottom: 20px;
+        /* Animation */
+        animation: rainbow-text 10s linear infinite alternate;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="retro-header">Gay Nigga Balls!</h1>
+      <p class="retro-text">LET'S GET RACIST!</p>
+      <a href="#" class="button">CLICK FOR SOME FUN PICS</a>
+      <div class="image-container">
+        <img src="https://via.placeholder.com/800x400" id="pics" />
+      </div>
+    </div>
+
+    <script>
+      // Inline JavaScript for interactive elements (if needed)
+      document.addEventListener("DOMContentLoaded", function () {
+        // Available image URLs (replace with your actual image URLs)
+        let imageUrls = [
+          "https://raw.githubusercontent.com/jordan-trempert/media/main/mp4.gif",
+          "https://raw.githubusercontent.com/jordan-trempert/media/main/weird.gif",
+          "https://raw.githubusercontent.com/jordan-trempert/media/main/BeFunky-collage3jpg.jpg",
+        ];
+
+        let pics = document.getElementById("pics");
+
+        // Function to change image
+        function changeImage() {
+          if (imageUrls.length > 0) {
+            // Generate random index
+            let randomIndex = Math.floor(Math.random() * imageUrls.length);
+            // Set image source
+            pics.src = imageUrls[randomIndex];
+            // Remove used image URL from array
+            imageUrls.splice(randomIndex, 1);
+          } else {
+            // Reset the image URLs if all are used (optional)
+            imageUrls = [
+              "https://raw.githubusercontent.com/jordan-trempert/media/main/mp4.gif",
+              "https://raw.githubusercontent.com/jordan-trempert/media/main/weird.gif",
+              "https://raw.githubusercontent.com/jordan-trempert/media/main/BeFunky-collage3jpg.jpg",
+            ];
+            // Display a message or handle as per your requirement
+          }
+        }
+
+        // Event listener for button click
+        document
+          .querySelector(".button")
+          .addEventListener("click", function (event) {
+            event.preventDefault();
+            changeImage();
+          });
+
+        // Initially load a random image
+        changeImage();
+      });
+    </script>
+  </body>
+</html>
